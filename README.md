@@ -1,4 +1,5 @@
-![5a2afa7b-3022-42e6-a988-56d1831b3019](https://github.com/user-attachments/assets/e2ce160c-4970-407a-9240-0ec34fa4d583)
+                     ![pass-ripper-hydra](https://github.com/user-attachments/assets/c311b34a-2b46-498a-b646-327fe02c82f8)
+
 #PassRipperHydra
 
 PassRipperHydra is an advanced AI-powered password cracking tool designed for red team operations. It leverages machine learning models like PassGAN for password generation, integrates with tools like John the Ripper and Hydra for offline and online attacks, and includes advanced captcha-solving capabilities using a pretrained CNN model. The tool features a cyberpunk-themed Streamlit GUI for ease of use.
@@ -99,18 +100,19 @@ source venv/bin/activate
 ```
 
 # Step 4: Install Dependencies
+```
 pip install -r requirements.txt
-
-
+```
+```
 Windows Note: If PyAudio fails to install:pip install pipwin
 pipwin install pyaudio
-
-
+```
+```
 Linux Note: Install system dependencies for PyAudio:sudo apt install -y portaudio19-dev
-
-
+```
+```
 TensorFlow Note: If tensorflow==1.13.1 fails, download a compatible wheel from Christoph Gohlke’s site and install manually:pip install path\to\tensorflow-1.13.1-cp37-cp37m-<platform>.whl
-
+```
 
 
 # step 5: Configure Environment Variables
@@ -135,17 +137,17 @@ Ensure CAPTCHA_MODEL_PATH points to the pretrained captcha model (train it if mi
 
 
 # Step 6: Install Hashcat (Optional, for GPU Acceleration)
-
+```
 Windows:
 Download Hashcat from hashcat.net.
 Extract to C:\hashcat and add to PATH.
-
-
+```
+```
 macOS:brew install hashcat
-
-
+```
+```
 Linux:sudo apt install -y hashcat
-
+```
 
 Ensure GPU drivers (e.g., NVIDIA CUDA) are installed for acceleration.
 
@@ -182,16 +184,20 @@ with open(weights_path, 'wb') as f:
 If the pretrained weights are unavailable or you want to retrain:
 
 Prepare a password dataset (e.g., RockYou dataset, available from various sources—ensure legal usage).
-Follow the training instructions in the PassGAN repository:python train.py --dataset path/to/passwords.txt --output-dir fine_tuned/checkpoints
 
+Follow the training instructions in the PassGAN repository:
+```
+python train.py --dataset path/to/passwords.txt --output-dir fine_tuned/checkpoints
 
+```
 Copy the trained checkpoint to PassRipperHydra/fine_tuned/checkpoints/.
 Update checkpoint_path in main.py to the new checkpoint.
 
 # CAPTCHA CNN Model
 The CAPTCHA CNN model (models/captcha_cnn.h5) is used for solving image captchas.
-Step 1: Prepare a CAPTCHA Dataset
 
+Step 1: Prepare a CAPTCHA Dataset
+```
 Collect a dataset of CAPTCHA images (e.g., scrape from a target site or use a public dataset—ensure ethical usage).
 Label the images with their corresponding text (e.g., captcha_001.png -> "abcd").
 # Organize the dataset:captcha_dataset/
@@ -201,7 +207,7 @@ Label the images with their corresponding text (e.g., captcha_001.png -> "abcd")
 │   └── ...
 └── labels.csv  # Format: filename,text (e.g., captcha_001.png,abcd)
 
-
+```
 
 # Step 2: Pretrain the CAPTCHA CNN Model
 Use the following script to train the CNN model:

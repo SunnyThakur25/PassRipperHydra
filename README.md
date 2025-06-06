@@ -56,9 +56,10 @@ PassRipperHydra/
 └── README.md                  # Project documentation
 ```
  # Setup Instructions
+ ```
 # Step 1: Install Python 3.7
 PassRipperHydra requires Python 3.7 due to tensorflow==1.13.1 compatibility.
-
+```
 Windows:
 ```
 Download Python 3.7 from python.org.
@@ -86,9 +87,10 @@ Verify: python --version
 ```
 
 # Step 2: Clone the Repository
+```
 git clone https://github.com/SunnyThakur25/PassRipperHydra.git
 cd PassRipperHydra
-
+```
 # Step 3: Set Up Virtual Environment
 ```
 Windows:py -3.7 -m venv venv
@@ -155,10 +157,12 @@ Ensure GPU drivers (e.g., NVIDIA CUDA) are installed for acceleration.
 # Pretrained Models Setup
 PassGAN Model
 PassRipperHydra uses a pretrained PassGAN model for password generation. Follow these steps to set up the model:
+
 # Step 1: Clone the Original PassGAN Repository
+```
 git clone https://github.com/brannondorsey/PassGAN.git
 cd PassGAN
-
+```
 # Step 2: Adjust Paths in core/passgan.py
 ```
 Update weights_path and checkpoint_path in main.py:passgan = PassGANModel(

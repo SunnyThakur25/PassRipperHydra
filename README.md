@@ -1,4 +1,5 @@
-                     ![pass-ripper-hydra](https://github.com/user-attachments/assets/c311b34a-2b46-498a-b646-327fe02c82f8)
+![pass-ripper-hydra](https://github.com/user-attachments/assets/40dcfd6f-5a2c-4eee-9c02-bf92cd5a1574)
+
 
 #PassRipperHydra
 
